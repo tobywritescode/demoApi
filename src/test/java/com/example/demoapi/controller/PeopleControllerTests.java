@@ -1,5 +1,7 @@
 package com.example.demoapi.controller;
 
+import com.example.demoapi.model.people.Users;
+import com.example.demoapi.model.people.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -7,12 +9,12 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
+import java.util.Collections;
+import java.util.List;
+
 import static com.example.demoapi.helpers.Helpers.asJsonString;
 import static com.example.demoapi.helpers.Helpers.getListOfUsers;
-import static org.hamcrest.Matchers.containsString;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -24,12 +26,33 @@ public class PeopleControllerTests {
     private MockMvc mockMvc;
 
     @Test
-    void transformPeopleEndpointShouldReturnOkOnPostRequest() throws Exception {
+    void getUsersOverAnAgeShouldReturnUsersOverAnAgeAndReturnOk() throws Exception {
+
         String content = asJsonString(getListOfUsers());
-        this.mockMvc.perform(post("/people/transformPeople/test")
+
+        this.mockMvc.perform(post("/people/getUsersOver/30")
                         .content(content)
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk()).andExpect(content().string(content));
+    }
+
+    @Test
+    void getUsersOverAnAgeShouldThrowExceptionIfNullAge() throws Exception {
+        this.mockMvc.perform(post("/people/getUsersOver/-56")
+                        .content(asJsonString(getListOfUsers()))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest())
+                .andExpect(content().string("Age can not be lower than zero."));
+    }
+
+    @Test
+    void getUsersOverAnAgeShouldThrowExceptionIfNullUsers() throws Exception {
+        this.mockMvc.perform(post("/people/getUsersOver/30")
+                        .content(asJsonString(Users.builder().build()))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
     }
 }
