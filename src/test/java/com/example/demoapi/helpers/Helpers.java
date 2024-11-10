@@ -1,6 +1,7 @@
 package com.example.demoapi.helpers;
 
 import com.example.demoapi.model.people.User;
+import com.example.demoapi.model.people.UserAgeGroups;
 import com.example.demoapi.model.people.Users;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
@@ -32,43 +33,89 @@ public class Helpers {
     }
 
     public static Users getListSpecificOfUsers() {
-        Faker faker = new Faker();
         return Users.builder()
                 .userList(List.of(User.builder()
-                                .email(faker.name().username() + "@gmail.com")
+                                .email("test@gmail.com")
                                 .age(25)
-                                .name(faker.name().fullName())
+                                .name("fake name")
                                 .build(),
                         User.builder()
-                                .email(faker.name().username() + "@gmail.com")
+                                .email("test@gmail.com")
                                 .age(35)
-                                .name(faker.name().fullName())
+                                .name("fake name")
                                 .build(),
                         User.builder()
-                                .email(faker.name().username() + "@gmail.com")
+                                .email("test@gmail.com")
                                 .age(36)
-                                .name(faker.name().fullName())
+                                .name("fake name")
                                 .build(),
                         User.builder()
-                                .email(faker.name().username() + "@gmail.com")
+                                .email("test@gmail.com")
                                 .age(25)
-                                .name(faker.name().fullName())
+                                .name("fake name")
+                                .build(),
+                        User.builder()
+                                .email("test@gmail.com")
+                                .age(15)
+                                .name("fake name")
+                                .build(),
+                        User.builder()
+                                .email("test@gmail.com")
+                                .age(12)
+                                .name("fake name")
                                 .build())).build();
     }
 
+    public static UserAgeGroups getUserAgeGroups() {
+        UserAgeGroups userAgeGroups = new UserAgeGroups();
+        userAgeGroups.setChildren(List.of(User.builder()
+                        .email("test@gmail.com")
+                        .age(15)
+                        .name("fake name")
+                        .build(),
+                User.builder()
+                        .email("test@gmail.com")
+                        .age(12)
+                        .name("fake name")
+                        .build()));
+
+        userAgeGroups.setYoungAdults(List.of(User.builder()
+                        .email("test@gmail.com")
+                        .age(25)
+                        .name("fake name")
+                        .build(),
+                User.builder()
+                        .email("test@gmail.com")
+                        .age(25)
+                        .name("fake name")
+                        .build()));
+
+        userAgeGroups.setAdults(List.of(User.builder()
+                        .email("test@gmail.com")
+                        .age(35)
+                        .name("fake name")
+                        .build(),
+                User.builder()
+                        .email("test@gmail.com")
+                        .age(36)
+                        .name("fake name")
+                        .build()));
+
+        return userAgeGroups;
+    }
+
     public static Users getListSpecificOfUsersOver30() {
-        Faker faker = new Faker();
         return Users.builder()
                 .userList(List.of(
                         User.builder()
-                                .email(faker.name().username() + "@gmail.com")
+                                .email("test@gmail.com")
                                 .age(35)
-                                .name(faker.name().fullName())
+                                .name("fake name")
                                 .build(),
                         User.builder()
-                                .email(faker.name().username() + "@gmail.com")
+                                .email("test@gmail.com")
                                 .age(36)
-                                .name(faker.name().fullName())
+                                .name("fake name")
                                 .build())).build();
     }
 
