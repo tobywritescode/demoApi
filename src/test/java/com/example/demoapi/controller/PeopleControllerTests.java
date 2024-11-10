@@ -12,8 +12,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.Collections;
 import java.util.List;
 
-import static com.example.demoapi.helpers.Helpers.asJsonString;
-import static com.example.demoapi.helpers.Helpers.getListOfUsers;
+import static com.example.demoapi.helpers.Helpers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -27,14 +26,13 @@ public class PeopleControllerTests {
 
     @Test
     void getUsersOverAnAgeShouldReturnUsersOverAnAgeAndReturnOk() throws Exception {
-
-        String content = asJsonString(getListOfUsers());
-
+        String content = asJsonString(getListSpecificOfUsers());
+        String expectedContent = asJsonString(getListSpecificOfUsersOver30());
         this.mockMvc.perform(post("/people/getUsersOver/30")
                         .content(content)
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
-                .andExpect(status().isOk()).andExpect(content().string(content));
+                .andExpect(status().isOk()).andExpect(content().string(expectedContent));
     }
 
     @Test
@@ -55,4 +53,25 @@ public class PeopleControllerTests {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
     }
+
+    @Test
+    void getUsersInAgeGroupsShouldReturnUsersOverAnAgeAndReturnOk() throws Exception {
+        String content = asJsonString(getListSpecificOfUsers());
+        String expectedContent = asJsonString(getUserAgeGroups());
+        this.mockMvc.perform(post("/people/getUsersInAgeGroups")
+                        .content(content)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk()).andExpect(content().string(expectedContent));
+    }
+
+    @Test
+    void getUsersInAgeGroupsShouldThrowExceptionIfNullUsers() throws Exception {
+        this.mockMvc.perform(post("/people/getUsersInAgeGroups")
+                        .content(asJsonString(Users.builder().build()))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isBadRequest());
+    }
+
 }
