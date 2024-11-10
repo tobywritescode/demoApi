@@ -25,4 +25,12 @@ public class ErrorHandlersAdvice extends ResponseEntityExceptionHandler {
                 .status(HttpStatus.BAD_REQUEST)
                 .body(e.getMessage());
     }
+
+    @ExceptionHandler(IdsCanNotBeEmptyException.class)
+    public ResponseEntity<String> IdsCanNotBeEmptyException(IdsCanNotBeEmptyException e) {
+        // log exception
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(e.getMessage());
+    }
 }

@@ -13,6 +13,7 @@ import java.util.Collections;
 import java.util.List;
 
 import static com.example.demoapi.helpers.Helpers.*;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -72,6 +73,11 @@ public class PeopleControllerTests {
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest());
+    }
+
+    @Test
+    void getRickAndMortyCharactersShouldReturnOkWithValidRequest() throws Exception {
+        this.mockMvc.perform(get("/people/getRickAndMortyCharacters/1,2,3,4")).andExpect(status().isOk());
     }
 
 }
