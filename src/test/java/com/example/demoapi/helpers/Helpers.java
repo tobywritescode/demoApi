@@ -1,5 +1,6 @@
 package com.example.demoapi.helpers;
 
+import com.example.demoapi.model.people.RickAndMortyCharacter;
 import com.example.demoapi.model.people.User;
 import com.example.demoapi.model.people.UserAgeGroups;
 import com.example.demoapi.model.people.Users;
@@ -125,6 +126,47 @@ public class Helpers {
                 .age(55)
                 .name("test man")
                 .build();
+
+    }
+
+    public static RickAndMortyCharacter[] getListOfRickAndMortyCharacters(){
+        RickAndMortyCharacter rickSanchez = RickAndMortyCharacter.builder()
+                .id(1)
+                .name("Rick Sanchez")
+                .status("Alive")
+                .species("Human")
+                .type("")
+                .gender("Male")
+                .build();
+
+        RickAndMortyCharacter mortySmith = RickAndMortyCharacter.builder()
+                .id(2)
+                .name("Morty Smith")
+                .status("Alive")
+                .species("Human")
+                .type("")
+                .gender("Male")
+                .build();
+
+        RickAndMortyCharacter summerSmith = RickAndMortyCharacter.builder()
+                .id(3)
+                .name("Summer Smith")
+                .status("Alive")
+                .species("Human")
+                .type("")
+                .gender("Female")
+                .build();
+
+        RickAndMortyCharacter bethSmith = RickAndMortyCharacter.builder()
+                .id(4)
+                .name("Beth Smith")
+                .status("Alive")
+                .species("Human")
+                .type("")
+                .gender("Female")
+                .build();
+
+        return new RickAndMortyCharacter[]{rickSanchez,mortySmith, summerSmith, bethSmith};
 
     }
 }

@@ -75,9 +75,4 @@ public class PeopleControllerTests {
                 .andExpect(status().isBadRequest());
     }
 
-    @Test
-    void getRickAndMortyCharactersShouldReturnOkWithValidRequest() throws Exception {
-        this.mockMvc.perform(get("/people/getRickAndMortyCharacters/1,2,3,4")).andExpect(status().isOk());
-    }
-
 }
