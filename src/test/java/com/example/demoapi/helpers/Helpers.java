@@ -129,9 +129,20 @@ public class Helpers {
 
     }
 
+    public static RickAndMortyCharacter returnRick(){
+        return RickAndMortyCharacter.builder()
+                .id(1L)
+                .name("Rick Sanchez")
+                .status("Alive")
+                .species("Human")
+                .type("Scientist")
+                .gender("Male")
+                .build();
+    }
+
     public static RickAndMortyCharacter[] getListOfRickAndMortyCharacters(){
         RickAndMortyCharacter rickSanchez = RickAndMortyCharacter.builder()
-                .id(1)
+                .id(1L)
                 .name("Rick Sanchez")
                 .status("Alive")
                 .species("Human")
@@ -140,7 +151,7 @@ public class Helpers {
                 .build();
 
         RickAndMortyCharacter mortySmith = RickAndMortyCharacter.builder()
-                .id(2)
+                .id(2L)
                 .name("Morty Smith")
                 .status("Alive")
                 .species("Human")
@@ -149,7 +160,7 @@ public class Helpers {
                 .build();
 
         RickAndMortyCharacter summerSmith = RickAndMortyCharacter.builder()
-                .id(3)
+                .id(3L)
                 .name("Summer Smith")
                 .status("Alive")
                 .species("Human")
@@ -158,7 +169,7 @@ public class Helpers {
                 .build();
 
         RickAndMortyCharacter bethSmith = RickAndMortyCharacter.builder()
-                .id(4)
+                .id(4L)
                 .name("Beth Smith")
                 .status("Alive")
                 .species("Human")

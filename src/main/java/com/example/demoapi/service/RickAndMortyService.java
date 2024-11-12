@@ -22,20 +22,23 @@ public class RickAndMortyService implements ApiService {
 
     public RickAndMortyCharacter[] getCharacters(Integer[] ids) throws JsonProcessingException {
 
-        String idString = Arrays.toString(ids);
-
-        StringBuilder sb = new StringBuilder("");
-        for (int i = 0; i < ids.length; i++) {
-            sb.append(ids[i]);
-            if (i != ids.length - 1) {
-                sb.append(",");
-            }
-        }
+        String idString = getIdsAsString(ids).toString();
 
 
-        String response = restTemplate.getForObject(url+sb, String.class);
+        String response = restTemplate.getForObject(url+idString, String.class);
 
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(response, RickAndMortyCharacter[].class);
+    }
+
+    private static StringBuilder getIdsAsString(Integer[] ids) {
+        StringBuilder idString = new StringBuilder("");
+        for (int i = 0; i < ids.length; i++) {
+            idString.append(ids[i]);
+            if (i != ids.length - 1) {
+                idString.append(",");
+            }
+        }
+        return idString;
     }
 }

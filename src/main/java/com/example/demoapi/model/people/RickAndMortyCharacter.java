@@ -1,6 +1,9 @@
 package com.example.demoapi.model.people;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 
 import java.io.Serializable;
@@ -11,8 +14,12 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Builder
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Entity
+@Table(name="characters")
 public class RickAndMortyCharacter implements Serializable {
-    private int id;
+
+    @Id
+    private Long id;
     private String name;
     private String status;
     private String species;
