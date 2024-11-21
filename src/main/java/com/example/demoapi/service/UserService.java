@@ -1,6 +1,6 @@
 package com.example.demoapi.service;
 
-import com.example.demoapi.model.people.User;
+import com.example.demoapi.model.people.UserInfo;
 import com.example.demoapi.model.people.UserAgeGroups;
 import com.example.demoapi.model.people.Users;
 import org.springframework.stereotype.Service;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 public class UserService {
 
     public Users getUsersOverAge(Users users, Integer age) {
-        users.userList = users.userList.stream()
+        users.userInfoList = users.userInfoList.stream()
                 .filter(user -> user.getAge() > age)
                 .toList();
         return users;
@@ -23,7 +23,7 @@ public class UserService {
 
     public UserAgeGroups putUsersIntoAgeGroups(Users users) {
 
-        Map<String, List<User>> usersByAgeRange = users.userList.stream()
+        Map<String, List<UserInfo>> usersByAgeRange = users.userInfoList.stream()
                 .collect(Collectors.groupingBy(user -> {
                     if (user.getAge() < 18) {
                         return "Child";

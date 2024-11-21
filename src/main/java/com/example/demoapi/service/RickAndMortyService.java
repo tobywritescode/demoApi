@@ -2,6 +2,7 @@ package com.example.demoapi.service;
 
 
 import com.example.demoapi.model.people.RickAndMortyCharacter;
+import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
 
 @RequiredArgsConstructor
 @Service

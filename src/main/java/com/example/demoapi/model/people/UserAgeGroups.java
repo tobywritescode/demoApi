@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 public class UserAgeGroups {
-   List<User> adults;
-   List<User> children;
-   List<User> youngAdults;
+   List<UserInfo> adults;
+   List<UserInfo> children;
+   List<UserInfo> youngAdults;
 }

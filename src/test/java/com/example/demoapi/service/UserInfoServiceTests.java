@@ -11,7 +11,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
 @SpringBootTest
-public class UserServiceTests {
+public class UserInfoServiceTests {
 
     UserService userService;
 
@@ -24,9 +24,9 @@ public class UserServiceTests {
         Users users = getListSpecificOfUsers();
         Users expectedUsers = getListSpecificOfUsersOver30();
         Users actualUsers = userService.getUsersOverAge(users, 30);
-        assertThat(actualUsers.userList.size(), equalTo(expectedUsers.userList.size()));
-        assertThat(actualUsers.userList.get(0).age, equalTo(expectedUsers.userList.get(0).age));
-        assertThat(actualUsers.userList.get(1).age, equalTo(expectedUsers.userList.get(1).age));
+        assertThat(actualUsers.userInfoList.size(), equalTo(expectedUsers.userInfoList.size()));
+        assertThat(actualUsers.userInfoList.get(0).age, equalTo(expectedUsers.userInfoList.get(0).age));
+        assertThat(actualUsers.userInfoList.get(1).age, equalTo(expectedUsers.userInfoList.get(1).age));
     }
 
     @Test

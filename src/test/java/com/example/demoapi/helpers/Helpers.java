@@ -1,7 +1,7 @@
 package com.example.demoapi.helpers;
 
 import com.example.demoapi.model.people.RickAndMortyCharacter;
-import com.example.demoapi.model.people.User;
+import com.example.demoapi.model.people.UserInfo;
 import com.example.demoapi.model.people.UserAgeGroups;
 import com.example.demoapi.model.people.Users;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -22,45 +22,45 @@ public class Helpers {
     }
 
     public static Users getListOfUsers() {
-        List<User> users = new ArrayList<>();
+        List<UserInfo> userInfos = new ArrayList<>();
         Faker faker = new Faker();
-        IntStream.range(0, 25).forEach(i -> users.add(User.builder()
+        IntStream.range(0, 25).forEach(i -> userInfos.add(UserInfo.builder()
                 .email(faker.name().username() + "@gmail.com")
                 .age(25 + (int) (Math.random() * ((75 - 25) + 1)))
                 .name(faker.name().fullName())
                 .build()));
         return Users.builder()
-                .userList(users).build();
+                .userInfoList(userInfos).build();
     }
 
     public static Users getListSpecificOfUsers() {
         return Users.builder()
-                .userList(List.of(User.builder()
+                .userInfoList(List.of(UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(25)
                                 .name("fake name")
                                 .build(),
-                        User.builder()
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(35)
                                 .name("fake name")
                                 .build(),
-                        User.builder()
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(36)
                                 .name("fake name")
                                 .build(),
-                        User.builder()
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(25)
                                 .name("fake name")
                                 .build(),
-                        User.builder()
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(15)
                                 .name("fake name")
                                 .build(),
-                        User.builder()
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(12)
                                 .name("fake name")
@@ -69,34 +69,34 @@ public class Helpers {
 
     public static UserAgeGroups getUserAgeGroups() {
         UserAgeGroups userAgeGroups = new UserAgeGroups();
-        userAgeGroups.setChildren(List.of(User.builder()
+        userAgeGroups.setChildren(List.of(UserInfo.builder()
                         .email("test@gmail.com")
                         .age(15)
                         .name("fake name")
                         .build(),
-                User.builder()
+                UserInfo.builder()
                         .email("test@gmail.com")
                         .age(12)
                         .name("fake name")
                         .build()));
 
-        userAgeGroups.setYoungAdults(List.of(User.builder()
+        userAgeGroups.setYoungAdults(List.of(UserInfo.builder()
                         .email("test@gmail.com")
                         .age(25)
                         .name("fake name")
                         .build(),
-                User.builder()
+                UserInfo.builder()
                         .email("test@gmail.com")
                         .age(25)
                         .name("fake name")
                         .build()));
 
-        userAgeGroups.setAdults(List.of(User.builder()
+        userAgeGroups.setAdults(List.of(UserInfo.builder()
                         .email("test@gmail.com")
                         .age(35)
                         .name("fake name")
                         .build(),
-                User.builder()
+                UserInfo.builder()
                         .email("test@gmail.com")
                         .age(36)
                         .name("fake name")
@@ -107,21 +107,21 @@ public class Helpers {
 
     public static Users getListSpecificOfUsersOver30() {
         return Users.builder()
-                .userList(List.of(
-                        User.builder()
+                .userInfoList(List.of(
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(35)
                                 .name("fake name")
                                 .build(),
-                        User.builder()
+                        UserInfo.builder()
                                 .email("test@gmail.com")
                                 .age(36)
                                 .name("fake name")
                                 .build())).build();
     }
 
-    public static User returnAUser() {
-        return User.builder()
+    public static UserInfo returnAUser() {
+        return UserInfo.builder()
                 .email("new@new.com")
                 .age(55)
                 .name("test man")
@@ -135,7 +135,19 @@ public class Helpers {
                 .name("Rick Sanchez")
                 .status("Alive")
                 .species("Human")
-                .type("Scientist")
+                .type("")
+                .gender("Male")
+                .build();
+    }
+
+
+    public static RickAndMortyCharacter returnJerry(){
+        return RickAndMortyCharacter.builder()
+                .id(5L)
+                .name("Jerry Smith")
+                .status("Alive")
+                .species("Human")
+                .type("")
                 .gender("Male")
                 .build();
     }
