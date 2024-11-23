@@ -58,9 +58,9 @@ public class RickAndMortyController {
 //        return ResponseEntity.ok("did it");
 //    }
 
-    @GetMapping("/savecharacters")
-    public ResponseEntity<String> saveCharacters(){
-        rickAndMortyService.getAndSaveCharacters();
-        return ResponseEntity.ok("did it");
-    }
+//    @GetMapping("/savecharacters")
+//    public ResponseEntity<String> saveCharacters(){
+//        rickAndMortyService.getAndSaveCharacters();
+//        return ResponseEntity.ok("did it");
+//    }
 }
