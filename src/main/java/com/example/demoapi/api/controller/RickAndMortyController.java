@@ -6,7 +6,6 @@ import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.example.demoapi.service.RickAndMortyService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +13,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequiredArgsConstructor
@@ -35,7 +33,10 @@ public class RickAndMortyController {
 
     @GetMapping("/getallcharacters")
     public ResponseEntity<List<RickAndMortyCharacter>> getRickAndMortyCharactersFromDb() {
-        return ResponseEntity.ok(rickAndMortyCharactersRepository.findAll());
+
+        List<RickAndMortyCharacter> characters = rickAndMortyService.getCharactersFromDb();
+
+        return ResponseEntity.ok(characters);
     }
 
     @GetMapping("/getcharacterbyid/{id}")

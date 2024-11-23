@@ -7,8 +7,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import java.util.List;
 
 
 @RequiredArgsConstructor
@@ -16,6 +19,8 @@ import org.springframework.web.client.RestTemplate;
 public class RickAndMortyService implements ApiService {
 
     private final RestTemplate restTemplate;
+
+    private final RickAndMortyCharactersRepository rickAndMortyCharactersRepository;
 
     @Value("${rm.get.characters.url}")
     private String url;
@@ -40,5 +45,10 @@ public class RickAndMortyService implements ApiService {
             }
         }
         return idString;
+    }
+
+    @Cacheable(value = "characters")
+    public List<RickAndMortyCharacter> getCharactersFromDb() {
+        return rickAndMortyCharactersRepository.findAll();
     }
 }
