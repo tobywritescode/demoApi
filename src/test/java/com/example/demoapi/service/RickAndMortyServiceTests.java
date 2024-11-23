@@ -2,6 +2,7 @@ package com.example.demoapi.service;
 
 import com.example.demoapi.model.people.RickAndMortyCharacter;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -63,7 +64,7 @@ public class RickAndMortyServiceTests {
     }
 
     @Test
-    void RickAndMortyGetFromDbShouldUseRedisCache(){
+    void RickAndMortyGetFromDbShouldUseRedisCache() throws JsonProcessingException {
         when(rickAndMortyCharactersRepository.findAll()).thenReturn(Arrays.stream(getListOfRickAndMortyCharacters()).toList());
         rickAndMortyService.getCharactersFromDb();
         Mockito.verify(rickAndMortyCharactersRepository, times(1)).findAll();

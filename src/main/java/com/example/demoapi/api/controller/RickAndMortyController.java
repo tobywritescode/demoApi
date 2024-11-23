@@ -32,7 +32,7 @@ public class RickAndMortyController {
     }
 
     @GetMapping("/getallcharacters")
-    public ResponseEntity<List<RickAndMortyCharacter>> getRickAndMortyCharactersFromDb() {
+    public ResponseEntity<List<RickAndMortyCharacter>> getRickAndMortyCharactersFromDb() throws JsonProcessingException {
 
         List<RickAndMortyCharacter> characters = rickAndMortyService.getCharactersFromDb();
 
@@ -50,5 +50,17 @@ public class RickAndMortyController {
                 .findById(Long.parseLong(id))
                 .map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+//    @GetMapping("/getlocations")
+//    public ResponseEntity<String> getLocations(){
+//        rickAndMortyService.getAndSaveLocations();
+//        return ResponseEntity.ok("did it");
+//    }
+
+    @GetMapping("/savecharacters")
+    public ResponseEntity<String> saveCharacters(){
+        rickAndMortyService.getAndSaveCharacters();
+        return ResponseEntity.ok("did it");
     }
 }
