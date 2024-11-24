@@ -1,8 +1,8 @@
 package com.example.demoapi.service;
 
-import com.example.demoapi.model.people.UserInfo;
-import com.example.demoapi.model.people.UserAgeGroups;
-import com.example.demoapi.model.people.Users;
+import com.example.demoapi.model.entity.people.UserInfo;
+import com.example.demoapi.model.entity.people.UserAgeGroups;
+import com.example.demoapi.model.entity.people.Users;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

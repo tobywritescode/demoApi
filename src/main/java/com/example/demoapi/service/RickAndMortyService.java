@@ -2,10 +2,7 @@ package com.example.demoapi.service;
 
 
 import com.example.demoapi.model.deserializers.CustomEpisodeDeserializer;
-import com.example.demoapi.model.location.Location;
-import com.example.demoapi.model.people.RickAndMortyCharacter;
-import com.example.demoapi.model.repo.EpisodeRepository;
-import com.example.demoapi.model.repo.LocationRepository;
+import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,8 +14,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.stream.IntStream;
 
 
 @RequiredArgsConstructor
@@ -39,11 +34,11 @@ public class RickAndMortyService implements ApiService {
     public RickAndMortyCharacter[] getCharacters(Integer[] ids) throws JsonProcessingException {
 
         String idString = getIdsAsString(ids).toString();
-
-
-        String response = restTemplate.getForObject(url+idString, String.class);
-
+        String response = restTemplate.getForObject(url + idString, String.class);
         ObjectMapper objectMapper = new ObjectMapper();
+        SimpleModule module = new SimpleModule();
+        module.addDeserializer(List.class, new CustomEpisodeDeserializer());
+        objectMapper.registerModule(module);
         return objectMapper.readValue(response, RickAndMortyCharacter[].class);
     }
 

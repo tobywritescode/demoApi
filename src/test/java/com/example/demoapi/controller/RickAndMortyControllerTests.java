@@ -63,17 +63,17 @@ public class RickAndMortyControllerTests {
 
     @Test
     void getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse() throws Exception {
-        this.mockMvc.perform(get("/rickandmorty/getcharacterbyid/1")
+        this.mockMvc.perform(get("/rickandmorty/getcharacterbyid/59")
                 .header("Authorization", "Bearer " + token))
                 .andExpect(status().isOk())
-                .andExpect(content().string(asJsonString(returnRick())));
+                .andExpect(content().string(asJsonString(returnBrad())));
     }
 
-    @Test
-    void getRickAndMortyCharactersShouldReturnOkWithValidResponse() throws Exception {
-        this.mockMvc.perform(get("/rickandmorty/getallcharacters")
-                .header("Authorization", "Bearer " + token))
-                .andExpect(status().isOk())
-                .andExpect(content().string(asJsonString(Arrays.stream(getListOfRickAndMortyCharacters()).toList())));
-    }
+//    @Test
+//    void getRickAndMortyCharactersShouldReturnOkWithValidResponse() throws Exception {
+//        this.mockMvc.perform(get("/rickandmorty/getallcharacters")
+//                .header("Authorization", "Bearer " + token))
+//                .andExpect(status().isOk())
+//                .andExpect(content().string(asJsonString(Arrays.stream(getListOfRickAndMortyCharacters()).toList())));
+//    }
 }

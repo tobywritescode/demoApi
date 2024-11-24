@@ -1,7 +1,7 @@
 package com.example.demoapi.service;
 
-import com.example.demoapi.model.people.UserAgeGroups;
-import com.example.demoapi.model.people.Users;
+import com.example.demoapi.model.entity.people.UserAgeGroups;
+import com.example.demoapi.model.entity.people.Users;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

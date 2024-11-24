@@ -1,4 +1,4 @@
-package com.example.demoapi.model.people;
+package com.example.demoapi.model.entity.people;
 
 import lombok.*;
 

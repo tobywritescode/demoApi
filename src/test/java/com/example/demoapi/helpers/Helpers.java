@@ -1,9 +1,12 @@
 package com.example.demoapi.helpers;
 
-import com.example.demoapi.model.people.RickAndMortyCharacter;
-import com.example.demoapi.model.people.UserInfo;
-import com.example.demoapi.model.people.UserAgeGroups;
-import com.example.demoapi.model.people.Users;
+import com.example.demoapi.model.dto.episode.EpisodeDto;
+import com.example.demoapi.model.entity.episode.Episode;
+import com.example.demoapi.model.entity.location.Location;
+import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
+import com.example.demoapi.model.entity.people.UserInfo;
+import com.example.demoapi.model.entity.people.UserAgeGroups;
+import com.example.demoapi.model.entity.people.Users;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.github.javafaker.Faker;
 
@@ -137,6 +140,27 @@ public class Helpers {
                 .species("Human")
                 .type("")
                 .gender("Male")
+                .build();
+    }
+
+    public static RickAndMortyCharacter returnBrad(){
+        return RickAndMortyCharacter.builder()
+                .id(59L)
+                .name("Brad Anderson")
+                .status("Dead")
+                .species("Human")
+                .type("")
+                .gender("Male")
+                .origin(Location.builder().id(20L)
+                        .name("Earth (Replacement Dimension)")
+                        .url("https://rickandmortyapi.com/api/location/20").build())
+                .location(Location.builder().id(20L)
+                        .name("Earth (Replacement Dimension)")
+                        .url("https://rickandmortyapi.com/api/location/20").build())
+                .image("https://rickandmortyapi.com/api/character/avatar/59.jpeg")
+                .episode(List.of(EpisodeDto.builder().id(7L).url("https://rickandmortyapi.com/api/episode/7").build()))
+                .url("https://rickandmortyapi.com/api/character/59")
+                .created("2017-11-05T11:41:38.964Z")
                 .build();
     }
 

@@ -1,7 +1,7 @@
-package com.example.demoapi.model.people;
+package com.example.demoapi.model.entity.people;
 
-import com.example.demoapi.model.episode.Episode;
-import com.example.demoapi.model.location.Location;
+import com.example.demoapi.model.dto.episode.EpisodeDto;
+import com.example.demoapi.model.entity.location.Location;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
@@ -40,7 +40,7 @@ public class RickAndMortyCharacter implements Serializable {
             joinColumns = @JoinColumn(name = "character_id"),
             inverseJoinColumns = @JoinColumn(name = "episode_id")
     )
-    private List<Episode> episode;
+    private List<EpisodeDto> episode;
     @Column(name = "character_url")
     private String url;
     private String created;

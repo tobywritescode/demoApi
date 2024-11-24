@@ -1,7 +1,7 @@
 package com.example.demoapi.api.controller;
 
 import com.example.demoapi.exception.IdsCanNotBeEmptyException;
-import com.example.demoapi.model.people.RickAndMortyCharacter;
+import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.example.demoapi.service.RickAndMortyService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -11,8 +11,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
@@ -29,14 +27,6 @@ public class RickAndMortyController {
             throw new IdsCanNotBeEmptyException("You must pass atleast one character Id");
         }
         return ResponseEntity.ok(rickAndMortyService.getCharacters(ids));
-    }
-
-    @GetMapping("/getallcharacters")
-    public ResponseEntity<List<RickAndMortyCharacter>> getRickAndMortyCharactersFromDb() throws JsonProcessingException {
-
-        List<RickAndMortyCharacter> characters = rickAndMortyService.getCharactersFromDb();
-
-        return ResponseEntity.ok(characters);
     }
 
     @GetMapping("/getcharacterbyid/{id}")

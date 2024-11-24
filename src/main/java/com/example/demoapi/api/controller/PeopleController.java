@@ -2,8 +2,8 @@ package com.example.demoapi.api.controller;
 
 import com.example.demoapi.exception.AgeCanNotBeLowerThanZero;
 import com.example.demoapi.exception.UsersCanNotBeNullException;
-import com.example.demoapi.model.people.UserAgeGroups;
-import com.example.demoapi.model.people.Users;
+import com.example.demoapi.model.entity.people.UserAgeGroups;
+import com.example.demoapi.model.entity.people.Users;
 import com.example.demoapi.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

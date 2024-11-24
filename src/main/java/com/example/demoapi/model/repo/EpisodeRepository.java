@@ -1,6 +1,6 @@
 package com.example.demoapi.model.repo;
 
-import com.example.demoapi.model.episode.Episode;
+import com.example.demoapi.model.entity.episode.Episode;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

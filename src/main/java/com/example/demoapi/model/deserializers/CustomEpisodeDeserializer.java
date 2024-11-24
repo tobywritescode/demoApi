@@ -1,6 +1,6 @@
 package com.example.demoapi.model.deserializers;
 
-import com.example.demoapi.model.episode.Episode;
+import com.example.demoapi.model.entity.episode.Episode;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;

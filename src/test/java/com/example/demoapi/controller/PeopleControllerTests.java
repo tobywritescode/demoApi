@@ -1,6 +1,6 @@
 package com.example.demoapi.controller;
 
-import com.example.demoapi.model.people.Users;
+import com.example.demoapi.model.entity.people.Users;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

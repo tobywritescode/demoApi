@@ -1,6 +1,6 @@
 package com.example.demoapi.service;
 
-import com.example.demoapi.model.people.RickAndMortyCharacter;
+import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;

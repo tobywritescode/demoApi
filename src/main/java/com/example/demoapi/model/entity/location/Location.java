@@ -1,4 +1,4 @@
-package com.example.demoapi.model.location;
+package com.example.demoapi.model.entity.location;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

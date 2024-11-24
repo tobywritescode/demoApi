@@ -1,6 +1,6 @@
-package com.example.demoapi.model.episode;
+package com.example.demoapi.model.entity.episode;
 
-import com.example.demoapi.model.people.RickAndMortyCharacter;
+import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
