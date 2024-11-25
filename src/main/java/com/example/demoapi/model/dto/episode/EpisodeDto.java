@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.*;
 
+import java.io.Serializable;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,7 +17,7 @@ import lombok.*;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Entity
 @Table(name="EPISODES")
-public class EpisodeDto {
+public class EpisodeDto implements Serializable {
     @Id
     private long id;
     private String name;

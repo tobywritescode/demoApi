@@ -24,7 +24,7 @@ public class Episode  implements Serializable {
     private String name;
     private String air_date;
     private String episode;
-    @ManyToMany(mappedBy = "episode")
+    @ManyToMany(mappedBy = "episode", fetch = FetchType.EAGER)
     private List<RickAndMortyCharacter> characters;
     @Column(name = "episode_url")
     private String url;

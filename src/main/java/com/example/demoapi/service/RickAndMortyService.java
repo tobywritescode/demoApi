@@ -2,7 +2,11 @@ package com.example.demoapi.service;
 
 
 import com.example.demoapi.model.deserializers.CustomEpisodeDeserializer;
+import com.example.demoapi.model.entity.episode.Episode;
+import com.example.demoapi.model.entity.location.Location;
 import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
+import com.example.demoapi.model.repo.EpisodeRepository;
+import com.example.demoapi.model.repo.LocationRepository;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -14,6 +18,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+
+import static java.util.stream.Collectors.*;
 
 
 @RequiredArgsConstructor
@@ -24,9 +36,9 @@ public class RickAndMortyService implements ApiService {
 
     private final RickAndMortyCharactersRepository rickAndMortyCharactersRepository;
 
-//    private final LocationRepository locationRepository;
+    private final LocationRepository locationRepository;
 //
-//    private final EpisodeRepository episodeRepository;
+    private final EpisodeRepository episodeRepository;
 
     @Value("${rm.get.characters.url}")
     private String url;
@@ -53,9 +65,25 @@ public class RickAndMortyService implements ApiService {
         return idString;
     }
 
-    @Cacheable(value = "characters")
+//    @Cacheable(value = "characters")
     public List<RickAndMortyCharacter> getCharactersFromDb() throws JsonProcessingException {
-        return rickAndMortyCharactersRepository.findAll();
+        List<RickAndMortyCharacter> c =  rickAndMortyCharactersRepository.findAll();
+        return c;
+    }
+
+    public Map<String, List<String>> getLivingEarthDwellersFromDb() {
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        return characters.stream()
+                .filter(character -> character.getGender().equalsIgnoreCase("male")
+                        && character.getStatus().equalsIgnoreCase("alive")
+                        && character.getLocation().getId().equals(1L))
+                .collect(Collectors.groupingBy(r -> r.getSpecies().equalsIgnoreCase("Human") ? "Human" : "Alien", mapping(RickAndMortyCharacter::getName, toList())));
+
+    }
+
+    public Map<String, Integer> getStreamsFromDb(Long i) {
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        return characters.stream().filter(r -> !r.getEpisode().isEmpty()).collect(Collectors.toMap(RickAndMortyCharacter::getName, c -> c.getEpisode().size() , (first, second) -> first));
     }
 
 //    public void getAndSaveLocations() {
@@ -84,7 +112,15 @@ public class RickAndMortyService implements ApiService {
 //
 //                rickAndMortyCharacter.getLocation().setId(getLocation(rickAndMortyCharacter.getLocation()));
 //                rickAndMortyCharacter.getOrigin().setId(getLocation(rickAndMortyCharacter.getOrigin()));
-//                rickAndMortyCharacter.getEpisode().forEach(episode -> episode.setId(episodeRepository.getEpisodeByUrl(episode.getUrl()).getId()));
+//                rickAndMortyCharacter.getEpisode().forEach(episode -> {
+//                    Episode ep = episodeRepository.getEpisodeByUrl(episode.getUrl());
+//                    episode.setId(ep.getId());
+//                    episode.setEpisode(ep.getEpisode());
+//                    episode.setName(ep.getName());
+//                    episode.setCreated(ep.getCreated());
+//                    episode.setAir_date(ep.getAir_date());
+//
+//                });
 //                rickAndMortyCharactersRepository.save(rickAndMortyCharacter);
 //            } catch (JsonProcessingException e) {
 //                throw new RuntimeException(e);

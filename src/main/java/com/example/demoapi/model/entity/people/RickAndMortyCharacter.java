@@ -1,10 +1,13 @@
 package com.example.demoapi.model.entity.people;
 
 import com.example.demoapi.model.dto.episode.EpisodeDto;
+import com.example.demoapi.model.entity.episode.Episode;
 import com.example.demoapi.model.entity.location.Location;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.io.Serializable;
 import java.util.List;
@@ -40,6 +43,7 @@ public class RickAndMortyCharacter implements Serializable {
             joinColumns = @JoinColumn(name = "character_id"),
             inverseJoinColumns = @JoinColumn(name = "episode_id")
     )
+    @Fetch(FetchMode.SUBSELECT)
     private List<EpisodeDto> episode;
     @Column(name = "character_url")
     private String url;

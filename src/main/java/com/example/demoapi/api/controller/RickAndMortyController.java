@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+import java.util.Map;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/rickandmorty")
@@ -42,12 +45,27 @@ public class RickAndMortyController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping("/getcharacters")
+    public ResponseEntity<List<RickAndMortyCharacter>> getCharacters() throws JsonProcessingException {
+        return ResponseEntity.ok(rickAndMortyService.getCharactersFromDb());
+    }
+
+    @GetMapping("/getlivingearthdwellers")
+    public ResponseEntity<Map<String, List<String>>> getLivingEarthDwellersFromDb(){
+        return ResponseEntity.ok(rickAndMortyService.getLivingEarthDwellersFromDb());
+    }
+
+    @GetMapping("/getstreams/{id}")
+    public ResponseEntity<Map<String, Integer>> getStreamsFromDb(@PathVariable Long id){
+        return ResponseEntity.ok(rickAndMortyService.getStreamsFromDb(id));
+    }
+
 //    @GetMapping("/getlocations")
 //    public ResponseEntity<String> getLocations(){
 //        rickAndMortyService.getAndSaveLocations();
 //        return ResponseEntity.ok("did it");
 //    }
-
+//
 //    @GetMapping("/savecharacters")
 //    public ResponseEntity<String> saveCharacters(){
 //        rickAndMortyService.getAndSaveCharacters();
