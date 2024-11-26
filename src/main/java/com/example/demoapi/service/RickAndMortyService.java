@@ -2,11 +2,8 @@ package com.example.demoapi.service;
 
 
 import com.example.demoapi.model.deserializers.CustomEpisodeDeserializer;
-import com.example.demoapi.model.entity.episode.Episode;
-import com.example.demoapi.model.entity.location.Location;
+import com.example.demoapi.model.dto.episode.EpisodeDto;
 import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
-import com.example.demoapi.model.repo.EpisodeRepository;
-import com.example.demoapi.model.repo.LocationRepository;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -17,13 +14,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.function.Function;
+import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import static java.util.stream.Collectors.*;
 
@@ -36,9 +28,9 @@ public class RickAndMortyService implements ApiService {
 
     private final RickAndMortyCharactersRepository rickAndMortyCharactersRepository;
 
-    private final LocationRepository locationRepository;
-//
-    private final EpisodeRepository episodeRepository;
+//    private final LocationRepository locationRepository;
+
+//    private final EpisodeRepository episodeRepository;
 
     @Value("${rm.get.characters.url}")
     private String url;
@@ -65,10 +57,9 @@ public class RickAndMortyService implements ApiService {
         return idString;
     }
 
-//    @Cacheable(value = "characters")
+    @Cacheable(value = "characters")
     public List<RickAndMortyCharacter> getCharactersFromDb() throws JsonProcessingException {
-        List<RickAndMortyCharacter> c =  rickAndMortyCharactersRepository.findAll();
-        return c;
+        return rickAndMortyCharactersRepository.findAll();
     }
 
     public Map<String, List<String>> getLivingEarthDwellersFromDb() {
@@ -83,7 +74,30 @@ public class RickAndMortyService implements ApiService {
 
     public Map<String, Integer> getStreamsFromDb(Long i) {
         List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
-        return characters.stream().filter(r -> !r.getEpisode().isEmpty()).collect(Collectors.toMap(RickAndMortyCharacter::getName, c -> c.getEpisode().size() , (first, second) -> first));
+        return characters.stream().collect(Collectors.toMap(RickAndMortyCharacter::getName, c -> c.getEpisode().size() , (first, second) -> first));
+    }
+
+    public List<String> getStreamsForEpisodes() {
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        return characters.stream().filter(c -> c.getEpisode().stream().anyMatch(episodeDto -> episodeDto.getId() == 3)).map(RickAndMortyCharacter::getName).collect(Collectors.toList());
+    }
+
+    public Map<String, Long> getGroupedGender(){
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        return characters.stream().collect(Collectors.groupingBy(RickAndMortyCharacter::getGender, Collectors.counting()));
+    }
+
+    public Map<String, Map<Integer, List<String>>> getAllRicksEpisodeCount(){
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        return characters.stream()
+                        .filter(c -> c.getName().toLowerCase().contains("rick"))
+                        .collect(Collectors.toMap(
+                                r -> r.getName()+r.getId(),
+                                r -> r.getEpisode().stream().collect(Collectors.groupingBy(
+                                        e -> r.getEpisode().size(),
+                                        Collectors.mapping(EpisodeDto::getUrl, Collectors.toList()))
+                                )));
+
     }
 
 //    public void getAndSaveLocations() {

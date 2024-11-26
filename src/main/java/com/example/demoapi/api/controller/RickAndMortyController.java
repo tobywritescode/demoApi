@@ -60,6 +60,21 @@ public class RickAndMortyController {
         return ResponseEntity.ok(rickAndMortyService.getStreamsFromDb(id));
     }
 
+    @GetMapping("/getstuff")
+    public ResponseEntity<List<String>> getStreamsFromDb(){
+        return ResponseEntity.ok(rickAndMortyService.getStreamsForEpisodes());
+    }
+
+    @GetMapping("/getgendercount")
+    public ResponseEntity<Map<String, Long>> getGenderCountFromDb(){
+        return ResponseEntity.ok(rickAndMortyService.getGroupedGender());
+    }
+
+    @GetMapping("/getricks")
+    public ResponseEntity<Map<String, Map<Integer, List<String>>>> getRicksFromDb(){
+        return ResponseEntity.ok(rickAndMortyService.getAllRicksEpisodeCount());
+    }
+
 //    @GetMapping("/getlocations")
 //    public ResponseEntity<String> getLocations(){
 //        rickAndMortyService.getAndSaveLocations();
