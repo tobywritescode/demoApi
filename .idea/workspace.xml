@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1b3cdf06-58ce-49b0-b26e-21c62badea8f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/config/BatchProcessingConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/listener/JobCompletionNotificationListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/processor/UserInfoProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/reader/CsvItemReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/writer/UserInfoWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/input/input.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demoapi/api/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/api/controller/PeopleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demoapi/model/entity/people/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/model/entity/people/UserInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demoapi/service/RickAndMortyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/service/RickAndMortyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.trace.db" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ElmWorkspace">
+    <elmProjects />
+    <settings elmCompilerPath="" lamderaCompilerPath="" elmFormatPath="" elmTestPath="" elmReviewPath="" isElmFormatOnSaveEnabled="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="demoApi/invalid/JPA" />
+    </ignored-facets>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2ociZtFEC31kUFtincyCgBX7LgF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.demoApi.executor": "Run",
+    "JUnit.PeopleControllerTests.executor": "Run",
+    "JUnit.PeopleControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidRequest.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersInAgeGroupsShouldReturnUsersOverAnAgeAndReturnOk.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersOverAnAgeShouldReturnUsersOverAnAgeAndReturnOk.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersOverAnAgeShouldThrowExceptionIfNullAge.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersOverAnAgeShouldThrowExceptionIfNullUsers.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersOverShouldReturnUsersOverAge.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersUnderAnAgeShouldReturnUsersUnderAnAgeAndReturnOk.executor": "Run",
+    "JUnit.PeopleControllerTests.getUsersUnderAnAgeShouldThrowExceptionIfNullUsers.executor": "Run",
+    "JUnit.PeopleControllerTests.transformPeopleEndpointShouldReturnOkOnPostRequest.executor": "Run",
+    "JUnit.RickAndMortyControllerTests.executor": "Run",
+    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse.executor": "Run",
+    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturn401WithInvalidRequest.executor": "Run",
+    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidRequest.executor": "Run",
+    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidResponse.executor": "Run",
+    "JUnit.RickAndMortyControllerTests.rootWhenAuthenticatedThenSaysHelloUser.executor": "Run",
+    "JUnit.RickAndMortyServiceTests.RickAndMortyGetFromDbShouldUseRedisCache.executor": "Run",
+    "JUnit.RickAndMortyServiceTests.executor": "Run",
+    "JUnit.RickAndMortyServiceTests.rickAndMortyServiceSaveCharactersShouldSaveCharactersIntoDatabase.executor": "Debug",
+    "JUnit.RickAndMortyServiceTests.rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi.executor": "Run",
+    "JUnit.UserServiceTests.UserServiceGetUsersOverAgeShouldReturnCorrectUsers.executor": "Run",
+    "JUnit.UserServiceTests.UsersServicePutUsersIntoAgeGRoupsShouldReturnCorrectUsers.executor": "Debug",
+    "JUnit.UserServiceTests.UsersServicePutUsersIntoAgeGroupsShouldReturnCorrectUsers.executor": "Run",
+    "JUnit.UserServiceTests.executor": "Run",
+    "JUnit.input in demoApi.executor": "Run",
+    "JUnit.java in demoApi.executor": "Run",
+    "Java Scratch.Scratch.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
+    "Notification.DoNotAsk-Database detector": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Spring Boot.DemoApiApplication.executor": "Run",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "working",
+    "grid.search.filter.rows": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/toby/Documents/techtests/demoApi",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "org.elm.workspace.PROJECT_DISCOVERY": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
+    ]
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.demoapi.service.processor" />
+      <recent name="com.example.demoapi.service.listener" />
+      <recent name="com.example.demoapi.model.people" />
+      <recent name="com.example.demoapi.model.location.Location" />
+      <recent name="com.example.demoapi.exception" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/demoapi/model" />
+      <recent name="$PROJECT_DIR$/src/main/java/com/example/demoapi" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/db" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.demoapi.model.dto.people" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.demoApi">
+    <configuration name="demoApi" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.example.demoapi.DemoApiApplication" />
+      <module name="demoApi" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RickAndMortyControllerTests.getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demoApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demoapi.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demoapi.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demoapi.controller.RickAndMortyControllerTests" />
+      <option name="METHOD_NAME" value="getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RickAndMortyServiceTests.RickAndMortyGetFromDbShouldUseRedisCache" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demoApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demoapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demoapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demoapi.service.RickAndMortyServiceTests" />
+      <option name="METHOD_NAME" value="RickAndMortyGetFromDbShouldUseRedisCache" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RickAndMortyServiceTests.rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demoApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demoapi.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demoapi.service" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demoapi.service.RickAndMortyServiceTests" />
+      <option name="METHOD_NAME" value="rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="input in demoApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demoApi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="input.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="input" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in demoApi" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demoApi" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="demoApi" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demoapi.DemoApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.demoApi" />
+      <item itemvalue="JUnit.input in demoApi" />
+      <item itemvalue="JUnit.java in demoApi" />
+      <item itemvalue="JUnit.RickAndMortyControllerTests.getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse" />
+      <item itemvalue="JUnit.RickAndMortyServiceTests.RickAndMortyGetFromDbShouldUseRedisCache" />
+      <item itemvalue="JUnit.RickAndMortyServiceTests.rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.input in demoApi" />
+        <item itemvalue="JUnit.java in demoApi" />
+        <item itemvalue="JUnit.RickAndMortyControllerTests.getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse" />
+        <item itemvalue="JUnit.RickAndMortyServiceTests.rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi" />
+        <item itemvalue="JUnit.RickAndMortyServiceTests.RickAndMortyGetFromDbShouldUseRedisCache" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b3cdf06-58ce-49b0-b26e-21c62badea8f" name="Changes" comment="" />
+      <created>1731175326235</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1731175326235</updated>
+      <workItem from="1731175327182" duration="1244000" />
+      <workItem from="1731176579006" duration="27446000" />
+      <workItem from="1731277724240" duration="8013000" />
+      <workItem from="1731332214775" duration="16134000" />
+      <workItem from="1731489598149" duration="2775000" />
+      <workItem from="1731953743809" duration="14947000" />
+      <workItem from="1732069431335" duration="8856000" />
+      <workItem from="1732115325791" duration="478000" />
+      <workItem from="1732115822186" duration="8339000" />
+      <workItem from="1732213763293" duration="9582000" />
+      <workItem from="1732224652795" duration="30099000" />
+      <workItem from="1732396808188" duration="21790000" />
+      <workItem from="1732537561006" duration="19594000" />
+      <workItem from="1732713703056" duration="5056000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
