@@ -38,8 +38,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-<<<<<<< Updated upstream
-=======
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
@@ -75,7 +73,6 @@
             <version>1.18.34</version>
             <scope>provided</scope>
         </dependency>
->>>>>>> Stashed changes
 
         <dependency>
             <groupId>com.h2database</groupId>

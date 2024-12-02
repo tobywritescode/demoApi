@@ -4,21 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b3cdf06-58ce-49b0-b26e-21c62badea8f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/config/BatchProcessingConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/listener/JobCompletionNotificationListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/processor/UserInfoProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/reader/CsvItemReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/batch/writer/UserInfoWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/input/input.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demoapi/api/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/api/controller/PeopleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demoapi/model/entity/people/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/model/entity/people/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demoapi/service/RickAndMortyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demoapi/service/RickAndMortyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/rickandmortydb.trace.db" afterDir="false" />
-    </list>
+    <list default="true" id="1b3cdf06-58ce-49b0-b26e-21c62badea8f" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,6 +25,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="working" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="InvalidFacetManager">
@@ -62,66 +53,65 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.demoApi.executor": "Run",
-    "JUnit.PeopleControllerTests.executor": "Run",
-    "JUnit.PeopleControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidRequest.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersInAgeGroupsShouldReturnUsersOverAnAgeAndReturnOk.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersOverAnAgeShouldReturnUsersOverAnAgeAndReturnOk.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersOverAnAgeShouldThrowExceptionIfNullAge.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersOverAnAgeShouldThrowExceptionIfNullUsers.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersOverShouldReturnUsersOverAge.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersUnderAnAgeShouldReturnUsersUnderAnAgeAndReturnOk.executor": "Run",
-    "JUnit.PeopleControllerTests.getUsersUnderAnAgeShouldThrowExceptionIfNullUsers.executor": "Run",
-    "JUnit.PeopleControllerTests.transformPeopleEndpointShouldReturnOkOnPostRequest.executor": "Run",
-    "JUnit.RickAndMortyControllerTests.executor": "Run",
-    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse.executor": "Run",
-    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturn401WithInvalidRequest.executor": "Run",
-    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidRequest.executor": "Run",
-    "JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidResponse.executor": "Run",
-    "JUnit.RickAndMortyControllerTests.rootWhenAuthenticatedThenSaysHelloUser.executor": "Run",
-    "JUnit.RickAndMortyServiceTests.RickAndMortyGetFromDbShouldUseRedisCache.executor": "Run",
-    "JUnit.RickAndMortyServiceTests.executor": "Run",
-    "JUnit.RickAndMortyServiceTests.rickAndMortyServiceSaveCharactersShouldSaveCharactersIntoDatabase.executor": "Debug",
-    "JUnit.RickAndMortyServiceTests.rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi.executor": "Run",
-    "JUnit.UserServiceTests.UserServiceGetUsersOverAgeShouldReturnCorrectUsers.executor": "Run",
-    "JUnit.UserServiceTests.UsersServicePutUsersIntoAgeGRoupsShouldReturnCorrectUsers.executor": "Debug",
-    "JUnit.UserServiceTests.UsersServicePutUsersIntoAgeGroupsShouldReturnCorrectUsers.executor": "Run",
-    "JUnit.UserServiceTests.executor": "Run",
-    "JUnit.input in demoApi.executor": "Run",
-    "JUnit.java in demoApi.executor": "Run",
-    "Java Scratch.Scratch.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-Database detector": "Database detector",
-    "Notification.DoNotAsk-Database detector": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.DemoApiApplication.executor": "Run",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "working",
-    "grid.search.filter.rows": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/home/toby/Documents/techtests/demoApi",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.elm.workspace.PROJECT_DISCOVERY": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.demoApi.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersInAgeGroupsShouldReturnUsersOverAnAgeAndReturnOk.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersOverAnAgeShouldReturnUsersOverAnAgeAndReturnOk.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersOverAnAgeShouldThrowExceptionIfNullAge.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersOverAnAgeShouldThrowExceptionIfNullUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersOverShouldReturnUsersOverAge.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersUnderAnAgeShouldReturnUsersUnderAnAgeAndReturnOk.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.getUsersUnderAnAgeShouldThrowExceptionIfNullUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PeopleControllerTests.transformPeopleEndpointShouldReturnOkOnPostRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyControllerTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyControllerTests.getRickAndMortyCharacterByIdShouldReturnOkWithValidResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturn401WithInvalidRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidRequest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyControllerTests.getRickAndMortyCharactersShouldReturnOkWithValidResponse.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyControllerTests.rootWhenAuthenticatedThenSaysHelloUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyServiceTests.RickAndMortyGetFromDbShouldUseRedisCache.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RickAndMortyServiceTests.rickAndMortyServiceSaveCharactersShouldSaveCharactersIntoDatabase.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RickAndMortyServiceTests.rickAndMortyServiceShouldCorrectlyReturnListOfCharactersFromApi.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.UserServiceGetUsersOverAgeShouldReturnCorrectUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.UsersServicePutUsersIntoAgeGRoupsShouldReturnCorrectUsers.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserServiceTests.UsersServicePutUsersIntoAgeGroupsShouldReturnCorrectUsers.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServiceTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.input in demoApi.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in demoApi.executor&quot;: &quot;Run&quot;,
+    &quot;Java Scratch.Scratch.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
+    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.DemoApiApplication.executor&quot;: &quot;Run&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;grid.search.filter.rows&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/toby/Documents/techtests/demoApi&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.elm.workspace.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JAVA"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
