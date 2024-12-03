@@ -7,10 +7,9 @@ import com.example.demoapi.model.entity.people.Users;
 import com.example.demoapi.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+@RestController
 @RequestMapping("/people")
 @AllArgsConstructor
 public class PeopleController {
