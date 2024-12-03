@@ -1,6 +1,8 @@
 package com.example.demoapi.service;
 
 import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
+import com.example.demoapi.model.repo.EpisodeRepository;
+import com.example.demoapi.model.repo.LocationRepository;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
@@ -42,13 +44,19 @@ public class RickAndMortyServiceTests {
     private String GET_JERRY_TEST_URL;
 
     @Autowired
-    RestTemplate restTemplate = new RestTemplate();
+    final RestTemplate restTemplate = new RestTemplate();
 
     @MockBean
     RickAndMortyCharactersRepository repository;
 
+    @MockBean
+    LocationRepository locationRepository;
+
+    @MockBean
+    EpisodeRepository episodeRepository;
+
     @Autowired
-    private RickAndMortyService rickAndMortyService  = new RickAndMortyService(restTemplate, repository);
+    private final RickAndMortyService rickAndMortyService  = new RickAndMortyService(restTemplate, repository, locationRepository, episodeRepository);
     @Autowired
     private RickAndMortyCharactersRepository rickAndMortyCharactersRepository;
 

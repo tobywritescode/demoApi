@@ -1,7 +1,6 @@
 package com.example.demoapi.model.entity.people;
 
 import com.example.demoapi.model.dto.episode.EpisodeDto;
-import com.example.demoapi.model.entity.episode.Episode;
 import com.example.demoapi.model.entity.location.Location;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;

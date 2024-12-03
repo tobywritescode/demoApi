@@ -7,15 +7,15 @@ import com.example.demoapi.service.RickAndMortyService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Map;
 
-@Controller
+@RestController
 @RequiredArgsConstructor
 @RequestMapping("/rickandmorty")
 public class RickAndMortyController {
@@ -75,15 +75,15 @@ public class RickAndMortyController {
         return ResponseEntity.ok(rickAndMortyService.getAllRicksEpisodeCount());
     }
 
-//    @GetMapping("/getlocations")
-//    public ResponseEntity<String> getLocations(){
-//        rickAndMortyService.getAndSaveLocations();
-//        return ResponseEntity.ok("did it");
-//    }
-//
-//    @GetMapping("/savecharacters")
-//    public ResponseEntity<String> saveCharacters(){
-//        rickAndMortyService.getAndSaveCharacters();
-//        return ResponseEntity.ok("did it");
-//    }
+    @GetMapping("/getlocations")
+    public ResponseEntity<String> getLocations(){
+        rickAndMortyService.getAndSaveLocations();
+        return ResponseEntity.ok("did it");
+    }
+
+    @GetMapping("/savecharacters")
+    public ResponseEntity<String> saveCharacters(){
+        rickAndMortyService.getAndSaveCharacters();
+        return ResponseEntity.ok("did it");
+    }
 }
