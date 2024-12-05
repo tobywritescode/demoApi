@@ -37,6 +37,8 @@ public class RickAndMortyService implements ApiService {
 
     private final EpisodeRepository episodeRepository;
 
+    private final TelegramService telegramService;
+
     @Value("${rm.get.characters.url}")
     private String url;
 
@@ -69,6 +71,7 @@ public class RickAndMortyService implements ApiService {
 
     public Map<String, List<String>> getLivingEarthDwellersFromDb() {
         List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        telegramService.postAsyncTelegramMessage("Someone is looking for earth dwellers.");
         return characters.stream()
                 .filter(character -> character.getGender().equalsIgnoreCase("male")
                         && character.getStatus().equalsIgnoreCase("alive")

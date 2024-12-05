@@ -47,7 +47,7 @@ public class RickAndMortyServiceTests {
     final RestTemplate restTemplate = new RestTemplate();
 
     @MockBean
-    RickAndMortyCharactersRepository repository;
+    RickAndMortyCharactersRepository rickAndMortyCharactersRepository;
 
     @MockBean
     LocationRepository locationRepository;
@@ -55,10 +55,12 @@ public class RickAndMortyServiceTests {
     @MockBean
     EpisodeRepository episodeRepository;
 
+    @MockBean
+    TelegramService telegramService;
+
     @Autowired
-    private final RickAndMortyService rickAndMortyService  = new RickAndMortyService(restTemplate, repository, locationRepository, episodeRepository);
-    @Autowired
-    private RickAndMortyCharactersRepository rickAndMortyCharactersRepository;
+    private final RickAndMortyService rickAndMortyService  = new RickAndMortyService(restTemplate, rickAndMortyCharactersRepository, locationRepository, episodeRepository, telegramService);
+
 
 
     @Test
@@ -69,6 +71,13 @@ public class RickAndMortyServiceTests {
         RickAndMortyCharacter[] actual = rickAndMortyService.getCharacters(ints);
         assertEquals(expected.length, actual.length);
         assertEquals(expected[0].getName(), actual[0].getName());
+    }
+
+    @Test
+    void rickAndMortyServiceShouldCallTelegramService() {
+        rickAndMortyService.getLivingEarthDwellersFromDb();
+        verify(telegramService).postAsyncTelegramMessage(anyString());
+
     }
 
     @Test
