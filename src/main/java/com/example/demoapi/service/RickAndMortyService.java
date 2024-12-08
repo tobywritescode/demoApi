@@ -65,13 +65,13 @@ public class RickAndMortyService implements ApiService {
     }
 
     @Cacheable(value = "characters")
-    public List<RickAndMortyCharacter> getCharactersFromDb() throws JsonProcessingException {
+    public List<RickAndMortyCharacter> getCharactersFromDb() {
         return rickAndMortyCharactersRepository.findAll();
     }
 
     public Map<String, List<String>> getLivingEarthDwellersFromDb() {
-        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
         telegramService.postAsyncTelegramMessage("Someone is looking for earth dwellers.");
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
         return characters.stream()
                 .filter(character -> character.getGender().equalsIgnoreCase("male")
                         && character.getStatus().equalsIgnoreCase("alive")
@@ -94,6 +94,15 @@ public class RickAndMortyService implements ApiService {
         List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
         return characters.stream().collect(Collectors.groupingBy(RickAndMortyCharacter::getGender, Collectors.counting()));
     }
+
+    public Map<String, List<EpisodeDto>> getReaccuringCharacters(){
+        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+        return characters.stream().filter(c -> c.getEpisode().size() > 1).collect(Collectors.toMap(r -> r.getName()+r.getId(), RickAndMortyCharacter::getEpisode));
+    }
+
+//    public List<String> getDifferentLocations(){
+//        List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
+//    }
 
     public Map<String, Map<Integer, List<String>>> getAllRicksEpisodeCount(){
         List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
