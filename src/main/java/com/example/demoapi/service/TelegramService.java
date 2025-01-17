@@ -2,7 +2,6 @@ package com.example.demoapi.service;
 
 import com.example.demoapi.model.telegram.TelegramPayload;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -14,10 +13,7 @@ import org.springframework.web.client.RestTemplate;
 public class TelegramService {
 
     private final RestTemplate restTemplate;
-
-    @Value("${telegram.bot.token}")
-    private String botToken;
-
+    private final String uri = "https://api.telegram.org/bot7247049361:AAHdoOiXelivThrVz8GFBqJ6HZEuC9V1klA/sendMessage";
 
     public String postTelegramMessage(String message){
 
@@ -27,7 +23,6 @@ public class TelegramService {
         TelegramPayload tp = TelegramPayload.builder().chat_id(1647081321).text(message).build();
         HttpEntity<TelegramPayload> httpEntity = new HttpEntity<>(tp, headers);
 
-        String uri = "https://api.telegram.org/bot"+botToken+"/sendMessage";
         return restTemplate.postForObject(uri, httpEntity, String.class);
     }
 
