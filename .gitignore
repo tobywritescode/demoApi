@@ -1,4 +1,6 @@
-target/
+target/*
+.idea
+src/main/resources/db/rickandmortydb.trace.db
 
 
 
