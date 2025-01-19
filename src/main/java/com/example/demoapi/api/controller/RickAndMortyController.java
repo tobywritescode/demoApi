@@ -1,6 +1,7 @@
 package com.example.demoapi.api.controller;
 
 import com.example.demoapi.exception.IdsCanNotBeEmptyException;
+import com.example.demoapi.model.dto.episode.EpisodeDto;
 import com.example.demoapi.model.entity.people.RickAndMortyCharacter;
 import com.example.demoapi.model.repo.RickAndMortyCharactersRepository;
 import com.example.demoapi.service.RickAndMortyService;
@@ -61,8 +62,8 @@ public class RickAndMortyController {
     }
 
     @GetMapping("/getstuff")
-    public ResponseEntity<List<String>> getStreamsFromDb(){
-        return ResponseEntity.ok(rickAndMortyService.getStreamsForEpisodes());
+    public ResponseEntity<Map<String, List<EpisodeDto>>> getStreamsFromDb(){
+        return ResponseEntity.ok(rickAndMortyService.getReaccuringCharacters());
     }
 
     @GetMapping("/getgendercount")
