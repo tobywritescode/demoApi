@@ -56,12 +56,12 @@ public class RickAndMortyController {
         return ResponseEntity.ok(rickAndMortyService.getLivingEarthDwellersFromDb());
     }
 
-    @GetMapping("/getstreams/{id}")
-    public ResponseEntity<Map<String, Integer>> getStreamsFromDb(@PathVariable Long id){
-        return ResponseEntity.ok(rickAndMortyService.getStreamsFromDb(id));
+    @GetMapping("/getcharacterepisodecount")
+    public ResponseEntity<Map<String, Integer>> getCharactersAndNumberOfEpisodes(){
+        return ResponseEntity.ok(rickAndMortyService.getCharactersAndNumberOfEpisodes());
     }
 
-    @GetMapping("/getstuff")
+    @GetMapping("/getreoccuringcharacters")
     public ResponseEntity<Map<String, List<EpisodeDto>>> getStreamsFromDb(){
         return ResponseEntity.ok(rickAndMortyService.getReaccuringCharacters());
     }

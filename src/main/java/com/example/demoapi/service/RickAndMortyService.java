@@ -80,7 +80,7 @@ public class RickAndMortyService implements ApiService {
 
     }
 
-    public Map<String, Integer> getStreamsFromDb(Long i) {
+    public Map<String, Integer> getCharactersAndNumberOfEpisodes() {
         List<RickAndMortyCharacter> characters = rickAndMortyCharactersRepository.findAll();
         return characters.stream().collect(Collectors.toMap(RickAndMortyCharacter::getName, c -> c.getEpisode().size() , (first, second) -> first));
     }
