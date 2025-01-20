@@ -54,7 +54,7 @@ To run the tests, port 8081 needs to be available for wiremock. Because of this 
       ]
       },`
 
-3. **/kafka***
+3. **/kafka/***
    1. **/go** - Endpoint generates 100 messages pushes them to a topic (userInfo-topic) and then consumes the messages using the kafka listener (UserInfoConsumer) class.
 4. **/people/***
    1. **/getUsersOver/{age}** - Endpoint takes a list of users and an integer path variable (age) and returns all users over that age.
