@@ -12,7 +12,7 @@ _This project is my sandbox for working with Spring and various libraries in my 
     
 
 2.  **Installation:**
-    *   Clone the repository: `git clone https://github.com/tobywritescode/starling_tech_test.git`
+    *   Clone the repository: `git clone https://github.com/tobywritescode/experimentalApi.git`
     * Use the docker-compose file to launch the relevant docker containers.
 
 ## **Test Usage:**
