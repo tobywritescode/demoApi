@@ -9,7 +9,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 @EnableConfigurationProperties(RsaKeyProperties.class)
 @EnableCaching
-@EnableAsync
+@EnableAsync(proxyTargetClass = true)
 @SpringBootApplication
 public class DemoApiApplication {
 

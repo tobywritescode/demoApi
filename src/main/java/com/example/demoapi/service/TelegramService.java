@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 @RequiredArgsConstructor
 @Service
 @Slf4j
-public class TelegramService {
+public class TelegramService implements MessagingService {
 
     private final RestTemplate restTemplate;
     private final String uri = "https://api.telegram.org/bot7247049361:AAHdoOiXelivThrVz8GFBqJ6HZEuC9V1klA/sendMessage";

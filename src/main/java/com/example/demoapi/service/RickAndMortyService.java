@@ -37,7 +37,7 @@ public class RickAndMortyService implements ApiService {
 
     private final EpisodeRepository episodeRepository;
 
-    private final TelegramService telegramService;
+    private final MessagingService telegramService;
 
     @Value("${rm.get.characters.url}")
     private String url;
